@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="./libs/materialize.css">
+	<link rel="stylesheet" href="./styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>CriptoMugnol</title>
+</head>
+
+<body>
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo center">CriptoMugnol</a>
+		</div>
+	</nav>
+
+	<div class="container div-abas">
+		<ul id="tabs-swipe-demo" class="tabs">
+			<li class="tab col s3"><a href="#test-swipe-1">Converção</a></li>
+			<li class="tab col s3"><a href="#test-swipe-2" onclick="montaGrafico()">Gráfico</a></li>
+		</ul>
+		<div id="test-swipe-1" class="col s12">
+			<div class="row">
+				<div class="input-field col s3" style="margin-top: 50px;">
+					<select id="cboMoeda" onchange="moedaChange()">
+            <option value="BTC" selected>Bitcoin</option>
+            <option value="LTC">Litecoin</option>
+            <option value="BCH">BCash</option>
+            <option value="XRP">XRP (Ripple)</option>
+            <option value="ETH">Ethereum</option>
+          </select>
+					<label>Cripto moeda</label>
+				</div>
+				<div class="col s1" style="margin-top: 52px;">
+					<div class="preloader-wrapper small active" id="load">
+						<div class="spinner-layer spinner-green-only">
+							<div class="circle-clipper left">
+								<div class="circle"></div>
+							</div>
+							<div class="gap-patch">
+								<div class="circle"></div>
+							</div>
+							<div class="circle-clipper right">
+								<div class="circle"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col s12 m4">
+					<div class="card blue-grey darken-1">
+						<div class="card-content white-text">
+							<div style="display: flex">
+								<i class="material-icons" style="margin-top: 5px; padding-right: 10px">arrow_upward</i>
+								<span class="card-title" id="lblMaiorValor"></span>
+							</div>
+							<p>Maior valor das últimas 24 horas.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col s12 m4">
+					<div class="card blue-grey darken-1">
+						<div class="card-content white-text">
+							<div style="display: flex">
+								<i class="material-icons" style="margin-top: 5px; padding-right: 10px">arrow_downward</i>
+								<span class="card-title" id="lblMenorValor"></span>
+							</div>
+							<p>Menor valor das últimas 24 horas.</p>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+			<div class="row">
+				<div class="input-field col s2"></div>
+				<div class="input-field col m3 s12">
+					<input id="txtValorCripto" type="number" oninput="criptoChange()">
+					<label for="txtValorCripto" id="lblCripto">Bitcoin</label>
+				</div>
+				<div class="input-field col s1" style="text-align: center">
+					<i class="material-icons" style="margin-top: 5px; padding-right: 10px">compare_arrows</i>
+				</div>
+				<div class="input-field col m3 s12">
+					<input id="txtValorReal" type="number" oninput="realChange()">
+					<label for="txtValorReal">Real</label>
+				</div>
+			</div>
+		</div>
+		<div id="test-swipe-2" class="col s12" style="width: 800px">
+			<canvas id="myChart"></canvas>
+		</div>
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<script src="index.js" charset="utf-8"></script>
+</body>
+
+</html>

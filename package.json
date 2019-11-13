@@ -1,0 +1,24 @@
+{
+  "name": "consumo-api-mercado-bitcoin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafaelMugnol/consumo-api-mercado-bitcoin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RafaelMugnol/consumo-api-mercado-bitcoin/issues"
+  },
+  "homepage": "https://github.com/RafaelMugnol/consumo-api-mercado-bitcoin#readme"
+}
